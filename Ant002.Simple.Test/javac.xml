@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="javac Example" default="all" basedir=".">
+	<target name="compileExample1">
+		<javac srcdir="${src.dir}"
+			   destdir="${build.dir}"
+			   includes="java/info/**, java/web/**"
+			   excludes="java/test/**"		
+		/>
+	</target>
+	
+	<target name="compileExample2">
+		<javac srcdir="${src.dir}" destdir="${build}">
+			<include name="java/info/**"/>
+			<include name="java/info/**, java/web/**"/>
+			<include name="java/test/**"/>
+		</javac>
+	</target>
+	
+	<target name="compileExample3">
+		<javac srcdir="${src.dir}"
+			   destdir="${build}"
+			   debug="on"
+			   deprecation="on"
+			   compiler="modern"
+			   classpath="junit.jar"
+			   fork="rtue"
+		/>
+	</target>
+</project>
